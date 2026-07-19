@@ -32,6 +32,3 @@ print(acc1.owner)
 acc1.deposit(1500)
 acc1.statement()
 
-
-
-            
