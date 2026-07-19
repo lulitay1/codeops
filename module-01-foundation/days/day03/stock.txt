@@ -1,0 +1,4 @@
+Paracetamol, 20
+Amoxicillin, 8
+Vitamin C, 15
+Insulin, 5
