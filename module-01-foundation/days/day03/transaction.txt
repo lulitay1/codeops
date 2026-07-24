@@ -1,0 +1,7 @@
+Abebe,250
+Hana,500
+Meron,120
+Abebe,300
+Samuel,450
+Hana,100
+Meron,200

@@ -1,0 +1,4 @@
+Abebe: 550.0 ETB
+Hana: 600.0 ETB
+Meron: 320.0 ETB
+Samuel: 450.0 ETB
