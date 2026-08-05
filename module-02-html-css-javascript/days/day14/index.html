@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ethiopian Habesha Eatery site for Ethiopian traditional foods and drinks">
+    <title>Habesha Eatery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+<header class="header">
+    <h1> Habesha Eatery</h1>
+    <h2>Enjoy Ethiopian Cuisine at Habesha Eatery</h2>
+    <nav class="navbar">
+        <div class="logo">Habesha Eatery</div>
+        <div class="nav-links">
+        <a href="index.html">Reservations</a> 
+        <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</header>
+<main>
+<h2>Reserve a Table</h2>
+<form id="reservation-form" action="" method="post">
+    <fieldset class="reservation">
+        <legend>Reservation Details</legend>
+        <label for="name">Full name</label>
+        <input id="name" type="text" name="name" required>
+        <label for="email">Email: </label>
+        <input id="email" name= email type="email" required>
+        <label for="tel">Tel: </label>
+        <input id = "tel" name="tel" type="tel" required>
+        <label for="date">Date: </label>
+        <input id="date" name= "date" type="date" required>
+        <label for="party_size">Party-size: </label>
+        <input  type="number" id="party_size"name="party-size" min="1" max="20" required>
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" name="requests" rows="4" ></textarea>
+        <button type="submit">Reserve Table </button>
+    </fieldset>
+    </form>
+<section id="menu-table">
+<h2>Our Menu</h2>
+<table id="menu">
+    <caption>Habesha Eatery Menu</caption>
+    <thead>
+        <tr>
+            <th scope="col">Food</th>
+            <th scope="col">price</th>
+            <th scope="col">Ingredients</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Doro Wot</td>
+            <td class="price">400</td>
+            <td class="ingredient">Chicken, spices, water</td>
+        </tr>
+         <tr>
+            <td>Tibs</td>
+            <td class="price">300</td>
+            <td class="ingredient">beef, spices</td>            
+        </tr>
+         <tr>
+            <td>Kitfo</td>
+            <td class="price">450</td>
+            <td class="ingredient">ground beef, spices</td>
+        </tr>
+        <tr>
+            <td>Beyaynet</td>
+            <td class="price">300</td>
+            <td class="ingredient">Vegetables, spices</td>
+        </tr>
+        <tr>
+            <td>Selata</td>
+            <td class="price">250</td>
+            <td class="ingredient">Vegetables, spices</td>
+        </tr>
+        <tr>
+            <td>Firfir</td>
+            <td class="price">200</td>
+            <td class="ingredient">Vegetables, spices</td>
+        </tr>
+        <tr>
+            <td>Tella</td>
+            <td class="price">150</td>
+            <td class="ingredient">Traditional beer</td>
+        </tr>
+        <tr>
+            <td>Tej</td>
+            <td class="price">200</td>
+            <td class="ingredient">fermented honey water</td>
+        </tr>
+        <tr>
+            <td>Ethiopian Coffe</td>
+            <td class="price">100</td>
+            <td class="ingredient">ground coffee, water</td>
+        </tr>
+    </tbody>
+</table>
+</section>
+
+<section class="menu-section">
+    <h2>Our Popular Menu</h2>
+    <div class="menu-grid">
+    <article class="menu-card">
+    <div class="card-img">
+        <span class="badge">Popular</span>
+        <img src="DoroWot.png" alt="Doro Wot, a traditional chicken stew">
+    </div>
+    <h3>Doro Wot</h3>
+    <p class="price">400</p>
+    <button>Reserve</button>
+</article>
+
+<article class="menu-card">
+    <div class="card-img">
+        <span class="badge">Popular</span>
+        <img src="DoroWot.png" alt="Doro Wot, a traditional chicken stew">
+    </div>
+    <h3>Kitfo</h3>
+    <p class="price">450</p>
+    <button>Reserve</button>
+</article>
+
+<article class="menu-card">
+    <div class="card-img">
+        <span class="badge">Popular</span>
+        <img src="DoroWot.png" alt="Doro Wot, a traditional chicken stew">
+    </div>
+    <h3>Beyaynet</h3>
+    <p class="price">300</p>
+    <button>Reserve</button>
+</article>
+
+<article class="menu-card">
+    <div class="card-img">
+        <span class="badge">Popular</span>
+        <img src="DoroWot.png" alt="Doro Wot, a traditional chicken stew">
+    </div>
+    <h3>Tej</h3>
+    <p class="price">200</p>
+    <button>Reserve</button>
+</article>
+</div>
+</section>
+
+<section id="location">
+<h2>Find Us</h2>
+<iframe src= "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126088.08887514078!2d38.7121152!3d9.0406912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1785452237434!5m2!1sen!2set"
+ width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+    title="Map showing the location of Habesha Eatery" frameborder="0"></iframe>
+</section>
+</main>
+<footer class="footer">Habesha Eatery &copy All Rights Reserved</footer>
+</div>
+</body>
+
+</html>  

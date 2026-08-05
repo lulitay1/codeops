@@ -1,0 +1,116 @@
+:root {
+    --card-bg: #f5f5dcc7;
+    --table-bg: #faebd7bc;
+    --brand: #0e3264;
+    --gold:#D4A027;
+    --border:#75681f;
+    --stripe:#a1b8d8;
+    --white: #ffffff;
+}
+
+*, *::before , *::after{
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+h1, h2, h3 {
+    color: var(--brand);
+}
+.page{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    
+       
+}
+.header{
+    background-color: var(--gold);
+}
+.logo {
+    color: var(--white);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.reservation-form{
+    display: grid;
+    justify-content: center;
+}
+.reservation {
+    display: grid;
+    width: 50%;
+    background-color: var(--card-bg);
+    border: solid var(--border);
+    border-radius: 10%;
+    align-items: center;
+}
+#menu-table{
+    width: 50%;
+    padding: 16px;
+    margin-top: 5%;
+    margin-left: 20%;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    border-top: 3px solid var(--gold);
+}
+tr, th, td{
+    border: solid var(--border);
+}
+#menu-table h2 { 
+    color: var(--brand); }
+.price::before{ 
+    content: "ETB "; }
+
+tr:nth-child(even) td.ingredient {
+    background-color: var(--stripe);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 1rem;
+}
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    border-top: 3px solid var(--gold);
+   
+}
+.menu-card:hover {
+    border-color: var(--gold);
+}
+.menu-card .price {
+    margin-top: auto;
+}
+.card-img {
+    position: relative;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    
+}
+.badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--white);
+    background-color: var(--gold);
+    
+}
+iframe{
+    margin-left: 20%;
+}
+.footer {
+    background-color: var(--gold);
+    color: var(--white);
+}
