@@ -1,0 +1,172 @@
+:root {
+    --card-bg: #f5f5dcc7;
+    --hover-bg: #d4a027c0;
+    --brand: #0e3264;
+    --gold:#D4A027;
+    --border:#75681f;
+    --stripe:#a1b8d8;
+    --white: #ffffff;
+
+    --space-md: 1rem;
+    --space-lg: 2rem;
+
+    --border-radius: 0.75rem;
+
+    --z-badge:10;
+    --z-nav:100;
+}
+
+*, *::before , *::after{
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+.header h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+h1, h2, h3 {
+    color: var(--brand);
+}
+.page{
+    display: grid;
+    grid-template-rows: auto 1fr auto;         
+}
+
+.logo {
+    color: var(--white);
+}
+.nav-links{
+    background-color: var(--card-bg);
+    
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-nav);
+}
+#reservation-form{
+    display: flex;
+    justify-content: center;
+}
+
+.reservation {
+    display: grid;
+    width: 50%;
+    background-color: var(--card-bg);
+    border: solid var(--border);
+    border-radius: var(--border-radius);
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+#menu-table{
+    width: 40%;
+    padding: 16px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    border-top: 3px solid var(--gold);
+    
+}
+tr, td{
+    border: solid var(--border) 2px;}
+th{
+    border: solid var(--gold) 3px;
+}
+#menu-table h2 { 
+    color: var(--brand); }
+.price::before{ 
+    content: "ETB "; }
+
+tr:nth-child(even) td.ingredient {
+    background-color: var(--stripe);
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    border-top: 3px solid var(--gold);
+    transition: background 200ms ease, transform 200ms ease;
+   
+}
+.menu-card:hover {
+    border-color: var(--gold);
+    background: var(--hover-bg);
+    transform: translateY(-2px);
+}
+.menu-card .price {
+    margin-top: auto;
+}
+.card-img {
+    position: relative;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    
+}
+.badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    color: var(--white);
+    background-color: var(--gold);
+    z-index: var(--z-badge);
+    
+}
+iframe{
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: 2px solid var(--border);
+}
+#footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--gold);
+    color: var(--white);
+    gap: var(--space-md);
+}
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+@media (min-width: 768px) {
+.menu-grid {
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+@media (min-width: 1024px) { 
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
+}
+}
+
+@keyframes fadeUp {
+from {
+    opacity: 0;
+    transform: translateY(20px);}
+to {
+    opacity: 1;
+    transform: translateY(0);}}
+.hero h1 {
+    animation: fadeUp 600ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+* {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+}
+}
