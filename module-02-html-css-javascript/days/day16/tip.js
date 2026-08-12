@@ -5,7 +5,6 @@ let tipped_bill;
 let service = "Tele_birr";
 let fee;
 
-
 bill >= 300? tipped_bill= bill+ (bill*0.1): tipped_bill= bill + (bill * 0.05) 
 
 per_person= tipped_bill/ party_size

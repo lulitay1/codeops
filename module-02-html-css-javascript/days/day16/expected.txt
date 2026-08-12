@@ -1,0 +1,3 @@
+expected output
+Total bill = 1100 ETB
+Each person's share = 157 ETB
