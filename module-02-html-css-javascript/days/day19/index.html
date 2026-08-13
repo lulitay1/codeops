@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+
+    <h1>Grocery List</h1>
+    <form id="groceryForm" action="post">
+        
+            <label for="">Item</label>
+            <input 
+                name="itemInput" 
+                type="text"
+                placeholder="Enter the grocery item">
+            <label for="">Quantity</label>
+            <input name="quantity" type="number">
+           
+      
+        <button type="submit" id="btn">Add Item</button>
+    </form>
+
+    <p id="itemCount"> 0 items remaining</p>
+
+    <ul id="list"></ul>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
