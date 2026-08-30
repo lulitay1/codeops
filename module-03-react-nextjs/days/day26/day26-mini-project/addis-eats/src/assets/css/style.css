@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+.header{
+    text-align: center;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.dish{
+    display: grid;
+    border: 1px, solid, brown;
+    margin: 1px;
+}
+
+@media (min-width:768)
+{
+    .menu{
+        grid-template-columns: repeat(1fr 1fr);
+    }
+}
+
+@media (min-width:1024){
+    .menu{
+        grid-template-columns: repeat(1fr 1fr 1fr) ;
+    }
+}
