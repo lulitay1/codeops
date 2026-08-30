@@ -1,3 +1,5 @@
-expected output
-Total bill = 1100 ETB
-Each person's share = 157 ETB
+Bill = 1000 ETB
+Tipped bill = 1100 ETB,
+Each person's share = 157.14285714285714 ETB
+Fee for service = 70 ETB
+Total after service= 1170 ETB

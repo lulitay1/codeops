@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Signup Form</title>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- =========================================
+             THEME TOGGLE
+             ========================================= -->
+
+        <header>
+
+            <div class="header-content">
+
+                <div>
+                    <h1>Signup</h1>
+                    <p>Join our community</p>
+                </div>
+
+                <button id="theme-toggle" type="button">
+                    Dark Mode
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+             SIGNUP FORM
+             ========================================= -->
+
+        <section class="form-section">
+
+            <h2>Create Your Account</h2>
+
+            <form id="signup-form">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="09XXXXXXXX or +2519XXXXXXXX"
+                    >
+
+                </div>
+
+
+                <!-- Error area -->
+
+                <p id="error" class="error"></p>
+
+
+                <button type="submit">
+                    Sign Up
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================================
+             SIGNUP COUNT
+             ========================================= -->
+
+        <section class="count-section">
+
+            <p>
+                People signed up:
+                <strong id="signup-count">0</strong>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Doro Wat",
+        "category": "Main",
+        "description": "A rich Ethiopian chicken stew made with berbere and spices.",
+        "image": "doro-wat.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Shiro Wat",
+        "category": "Vegetarian",
+        "description": "A comforting chickpea stew seasoned with Ethiopian spices.",
+        "image": "shiro-wat.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Misir Wat",
+        "category": "Vegetarian",
+        "description": "Spicy red lentil stew cooked with berbere.",
+        "image": "misir-wat.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Tibs",
+        "category": "Main",
+        "description": "Sautéed meat prepared with onions, peppers and Ethiopian spices.",
+        "image": "tibs.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Gomen",
+        "category": "Vegetarian",
+        "description": "Collard greens cooked with garlic and traditional spices.",
+        "image": "gomen.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Kitfo",
+        "category": "Main",
+        "description": "A traditional Ethiopian dish made with seasoned minced beef.",
+        "image": "kitfo.jpg"
+    }
+]

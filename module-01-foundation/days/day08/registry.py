@@ -143,7 +143,7 @@ class AccountRegistry:
     def top_by_balance(self, n=5):
         accts= sorted(self.by_number.values(),
         key=lambda a : a.balance,reverse=True)
-        return accts[:n].statement()
+        return accts[:n]
 
     def find_by_number(self, number):
         nums=sorted(self.by_number)

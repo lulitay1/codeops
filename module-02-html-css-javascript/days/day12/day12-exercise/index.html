@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ethio Telecom service registration and Ethiopian Airlines flight information.">
+
+    <title>Ethio Telecom Registration</title>
+</head>
+
+<body>
+
+    <h1>Ethio Telecom Registration</h1>
+
+    <!-- POST is used because registration data is being sent to the server. -->
+    <form action="/register" method="post">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <br><br>
+
+        <label for="phone">Phone:</label>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="\+251[0-9]{9}"
+            placeholder="+2519--------"
+            required
+        >
+
+        <br><br>
+
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+            <option value="bole">Bole</option>
+            <option value="kazanchis">Kazanchis</option>
+            <option value="piassa">Piassa</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+
+    <h2>Ethiopian Airlines Flights</h2>
+
+    <table border="1">
+        <caption>Flight Information</caption>
+
+        <thead>
+            <tr>
+                <th scope="col">Flight</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Departs</th>
+                <th scope="col">Price ETB</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>ET302</td>
+                <td>Addis Ababa</td>
+                <td>Nairobi</td>
+                <td>08:00</td>
+                <td>12,500</td>
+            </tr>
+
+            <tr>
+                <td>ET908</td>
+                <td>Addis Ababa</td>
+                <td>London</td>
+                <td>10:30</td>
+                <td>48,000</td>
+            </tr>
+
+            <tr>
+                <td>ET927</td>
+                <td>Addis Ababa</td>
+                <td>Dubai</td>
+                <td>14:15</td>
+                <td>31,000</td>
+            </tr>
+
+            <tr>
+                <td>ET500</td>
+                <td>Addis Ababa</td>
+                <td>Washington</td>
+                <td>22:00</td>
+                <td>75,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2>Ethiopian Dish</h2>
+
+    <figure>
+        <img src="dish.png" alt="Traditional Ethiopian food">
+        <figcaption>Traditional Ethiopian food.</figcaption>
+    </figure>
+
+    <iframe
+        src="https://www.google.com/maps?q=Addis+Ababa+Ethiopia&output=embed"
+        title="Map of Addis Ababa"
+        width="400"
+        height="300">
+    </iframe>
+
+
+    <h2>Accessibility Fixes</h2>
+
+
+    <!-- A real button can be used with a keyboard and understood by screen readers. -->
+    <button type="button">Click Me</button><br><br>
+
+    <!-- The label tells screen readers what the input is for. -->
+    <label for="username">Username:</label> 
+    <input type="text" id="username" name="username"><br><br>
+
+    <!-- Alt text describes the image to screen-reader users. -->
+    <img src="product.jpg" alt="Ethiopian coffee"><br><br>
+
+</body>
+</html>

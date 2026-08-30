@@ -1,0 +1,171 @@
+:root {
+    --green: #2e8b57;
+    --ink: #222e3f;
+    --line: #e2e8f0;
+    --background: #f8fafc;
+    --white: #ffffff;
+    --radius: 10px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: var(--background);
+
+    color: var(--ink);
+
+    line-height: 1.5;
+}
+
+
+header {
+    padding: 2rem 1rem;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+header h1 {
+    margin-top: 0;
+}
+
+
+header input {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 0.7rem;
+
+    border: 1px solid var(--line);
+
+    border-radius: var(--radius);
+
+    font-size: 1rem;
+}
+
+
+main {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+
+    padding: 1rem;
+}
+
+
+#recipes {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(200px, 1fr));
+
+    gap: 1rem;
+}
+
+
+.recipe {
+    background: var(--white);
+
+    border: 1px solid var(--line);
+
+    border-radius: var(--radius);
+
+    padding: 1rem;
+}
+
+
+.recipe h3 {
+    margin-top: 0;
+
+    color: var(--ink);
+}
+
+
+.category {
+    color: var(--green);
+
+    font-weight: 700;
+}
+
+
+.recipe button {
+    padding: 0.6rem 1rem;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: var(--green);
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.recipe button:hover {
+    opacity: 0.9;
+}
+
+
+#cookbook {
+    background: var(--white);
+
+    border: 1px solid var(--line);
+
+    border-radius: var(--radius);
+
+    padding: 1rem;
+}
+
+
+#cookbook ul {
+    padding-left: 1.2rem;
+}
+
+
+#cookbook button {
+    margin-left: 0.5rem;
+
+    padding: 0.3rem 0.5rem;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+.empty {
+    color: #666;
+}
+
+
+footer {
+    padding: 1rem;
+
+    text-align: center;
+
+    border-top: 1px solid var(--line);
+}
+
+
+@media (min-width: 800px) {
+
+    main {
+        grid-template-columns: 2fr 1fr;
+    }
+
+}

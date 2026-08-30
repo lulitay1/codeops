@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Habesha Recipes</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="container">
+
+            <h1>Habesha Recipes</h1>
+
+            <p>
+                Discover traditional Ethiopian recipes and save
+                your favorites to your cookbook.
+            </p>
+
+            <label for="search">
+                Search recipes
+            </label>
+
+            <input
+                id="search"
+                type="search"
+                placeholder="Search by recipe name..."
+                autocomplete="off"
+            >
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- Recipe section -->
+
+        <section aria-labelledby="recipes-heading">
+
+            <h2 id="recipes-heading">
+                Recipes
+            </h2>
+
+            <p
+                id="status"
+                aria-live="polite"
+            ></p>
+
+            <div id="recipes"></div>
+
+        </section>
+
+
+        <!-- Cookbook section -->
+
+        <aside
+            class="cookbook"
+            aria-labelledby="cookbook-heading"
+        >
+
+            <h2 id="cookbook-heading">
+                My Cookbook
+            </h2>
+
+            <div id="cookbook-list"></div>
+
+        </aside>
+
+
+        <!-- Contact Admin -->
+
+        <section
+            class="contact"
+            aria-labelledby="contact-heading"
+        >
+
+            <h2 id="contact-heading">
+                Contact Admin
+            </h2>
+
+            <p>
+                Have a recipe suggestion or question?
+                Send us a message.
+            </p>
+
+            <form
+                id="contact-form"
+                novalidate
+            >
+
+                <div class="form-group">
+
+                    <label for="contact-name">
+                        Name
+                    </label>
+
+                    <input
+                        id="contact-name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contact-phone">
+                        Ethiopian Phone
+                    </label>
+
+                    <input
+                        id="contact-phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="09xxxxxxxx"
+                        autocomplete="tel"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Write your message..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Single error region -->
+
+                <p
+                    id="form-error"
+                    class="error"
+                    role="alert"
+                    aria-live="assertive"
+                ></p>
+
+
+                <!-- Success region -->
+
+                <p
+                    id="form-success"
+                    class="success"
+                    aria-live="polite"
+                ></p>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                Habesha Recipes
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

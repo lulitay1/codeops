@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birr Watch</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Birr Watch</h1>
+
+        <p id="status"></p>
+
+
+        <!-- Currency Converter -->
+
+        <section>
+
+            <h2>Currency Converter</h2>
+
+            <form id="convert-form">
+
+                <label for="amount">
+                    Amount in ETB
+                </label>
+
+                <input
+                    id="amount"
+                    type="number"
+                    value="100"
+                    min="0"
+                    step="any"
+                >
+
+
+                <label for="currency">
+                    Currency
+                </label>
+
+                <select id="currency"></select>
+
+
+                <button type="submit">
+                    Convert
+                </button>
+
+            </form>
+
+            <p id="result"></p>
+
+        </section>
+
+
+        <!-- Watchlist -->
+
+        <section>
+
+            <h2>Watchlist</h2>
+
+            <button id="watch" type="button">
+                Add Selected Currency
+            </button>
+
+            <ul id="watchlist"></ul>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --blue: #527D9B;
+    --dark: #173A52;
+
+    --beige: #f5ece0;
+    --brown: #8B5E3C;
+    
+
+    --main: #FAF7F2;
+    --light-blue: #dfe7eb;
+    --white: #FFFFFF;
+}
+
+
+
+body{
+    background-color : var(--main);
+    font-family : Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+}
+/* header section */
+.top-bar {
+    background-color : var(--dark);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    height: 1rem;
+    font-size:70%;
+    padding:0px 10px 0px 10px;
+    
+}
+.nav-bar{
+    background-color: var(--light-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px;
+     
+
+}
+.logo {
+    color: var(--dark);
+    margin-bottom: 15px;
+  
+}
+.nav-links {
+    display:flex;
+    justify-content :space-between;
+    gap: 20px; 
+}
+.nav-links a{
+    
+    color:var(--dark);
+    text-decoration:none; 
+    font-weight: bold;
+    transition: 0.5s;   
+}
+.nav-links a:hover{
+    
+    color:var(--light-blue);
+}   
+
+/* main tag with 5 sections */
+
+/* 1. Hero section -1 parent div(4 inner tags) */
+
+.hero-section{
+    /* background-color: var(--beige); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 100px 30px 100px;
+    text-align: center;
+}   
+.hero-section .welcome{
+    color: var(--brown);
+    font-weight: bold;
+    font-size: 20px;
+     
+}
+
+.hero-section h1{
+    font-size: 40px;
+    animation: slideDown 1s ease; 
+}
+
+.hero-section h1 span{
+    color: var(--blue)
+}
+
+.hero-section p {
+    color:var(--blue );
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.btn, .about a{
+    background-color:var(--brown) ;
+    color: var(--white);
+    text-decoration: none;
+    padding: 7px 7px;
+    border-radius: 7px;
+    transition: 0.5s ;
+
+}
+.btn:hover ,.about a:hover{
+    background-color: var(--light-blue);
+    color: var(--blue);
+}
+
+/* 2.About section -2 parent divs second div (4 divs and one "a" tag) */
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title{
+    text-align: center;
+    color: var(--dark);
+    margin-top: 30px;
+   
+}
+.section-title p{
+    color: var(--blue);
+    font-weight: bold;
+   
+}
+
+.about-content{
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 25px;
+    
+}
+.about-div1:hover, .about-div2:hover{
+    box-shadow: 0 0 30px  rgba(0, 0, 0, 0.2);  
+} 
+.about-div1, .about-div2{
+    padding: 14px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--light-blue);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 105px;
+
+}
+.about-div1{
+    background-color: var(--beige);
+
+}
+.about-div2{
+    background-color: var(--light-blue);
+
+}
+.about-img1, .about-img2{
+    text-align: center;
+
+   
+}
+img{
+    object-fit: cover;
+    width: 200px;
+    height: auto;
+    overflow: hidden;
+}
+.about-div1 h3, .about-div2 h3{
+    color: var(--brown);
+    font-size: 20px;   
+    text-align: center;  
+}
+.about-div1 p, .about-div2 p{
+    font-weight: bold;
+    text-align: center;
+    color: var(--blue);
+    margin-bottom: 10px ;
+}
+.about-div2 span{
+    color: var(--dark)
+}
+
+/* skills */
+.skills-content{
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.skill{
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: var(--white);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.skill h3{
+    color: var(--brown);
+    margin-bottom: 10px;
+}
+.skills p{
+    font-weight: bold;
+}
+
+/* Projects-section*/
+
+.projects-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 10px;
+}
+.project{
+    display:flex;
+    gap: 20px;
+    justify-content: center;
+    background-color: var(--beige);
+    border-radius: 20px;
+    padding: 30px ;
+    box-shadow: 0 0 30px  rgba(0, 0, 0, 0.2);  
+
+}
+.proj-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:7px;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+.project h3{
+    color: var(--brown);    
+}
+.project a{
+    color: var(--brown);
+    text-decoration: none;
+    padding: 7px 7px;
+    border-radius: 7px;
+    transition: 0.5s ;
+    font-weight: bold;
+}
+.project a:hover{
+    background-color: var(--light-blue);
+    color: var(--blue);
+}
+.travel, .movie{
+    background-color: var(--white);
+    border-radius: 10px;
+}
+/* contact */
+.contacts-section{
+    background-color: var(--light-blue);
+    padding: 20px;
+}
+.contacts-content{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+.all-links{
+    display: flex;
+    padding: 20px 220px 0 220px;
+    justify-content: space-evenly;
+
+}
+.contacts-content a{
+    text-decoration: none;
+    color: var(--dark);
+    font-style: italic;
+    font-weight: normal;
+}
+.contacts-content a:hover{
+    color: var(--blue);
+}
+footer{
+    background-color: var(--dark);
+    color: white;
+    padding: 20px;
+}
+
+/* key frame is an animation from sth to sth */
+@keyframes slideDown{
+    from{
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX( 0px);
+
+    }
+}
+
+/* Responsive design */
+
+@media(min-width : 768){
+    .nav-bar{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-links{
+        gap:15px;
+    }
+
+    .skills-content{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .projects-content{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-div1{
+        background-color: var(--light-blue);
+
+}
+
+
+}
+
+
+
+
+  
+

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter&display=swap');
+
+:root{
+    --card-hover: #bff7ea; 
+    --card-bg:#96f3d9;
+    --btn-bg: #8e8136;;
+    --text:  #07081d;
+    --hover: #aba062;
+    --headings: #0c1048;
+    --border: #e2e8f0f6;
+
+    --space:16px;
+    --radius:10px;
+    --margin:40px;
+    --max:360px;
+    --space-md:1rem;
+    
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+ 
+body { 
+    font-family: "Inter", sans-serif; line-height: 1.6; 
+} 
+
+.card{
+    max-width: var(--max);
+    padding: var(--space);
+    border: var(--space-md) solid var(--border);
+    border-radius:var(--radius);
+    margin: var(--margin) auto;
+    background-color: var(--card-bg);
+}
+
+.card:hover{
+    background-color: var(--card-hover);
+    color: var(--text)
+}
+h1, h2, h3 {
+    color: var(--headings);
+}
+.list{
+    color:var(--text);
+}
+li::after{
+    content: "--- "
+}
+
+.btn{
+    right: var(--space-md);
+    background-color: var(--btn-bg);
+
+}
+.btn:hover{
+    background-color: var(--hover);
+}

@@ -1,0 +1,655 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1d1d1f;
+    background: #ffffff;
+}
+.apple-logo-img{
+    width: 15px;
+    height: 15px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* header */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.navbar {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-links {
+    display: none;
+}
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.nav-icons button {
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.menu-button {
+    display: block;
+}
+
+    /* common sections */
+.product-section,
+.event-section,
+.education-section {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 500px;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hero-image,
+.iphone .product-image,
+.product-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+.section-content, 
+.product-content,
+.education-content  {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    max-width: 600px;
+
+    padding: 30px 20px;
+}
+
+
+
+/* =========================
+   TEXT
+========================= */
+.product-content h2,
+.section-content h1,
+.education-content h2,
+.feature-content h2 {
+
+    font-size: 40px;
+
+    line-height: 1.05;
+
+    margin-bottom: 10px;
+}
+
+
+.product-content p,
+.section-content p,
+.education-content p,
+.feature-content p {
+
+    font-size: 22px;
+
+    line-height: 1.4;
+
+    margin-bottom: 18px;
+}
+
+/* buttons */
+
+.blue-link{
+    background-color: #ffffff;
+    color: black;
+    border-radius: 50PX;
+    padding: 10px;
+}
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.button {
+
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border-radius: 25px;
+
+    font-size: 15px;
+}
+
+
+.blue {
+    background: #0071e3;
+    color: white;
+}
+
+
+.blue-outline {
+    color: #0071e3;
+
+    border: 1px solid #0071e3;
+}
+
+/* event-section */
+.event-section{
+    align-items: flex-end;
+     color: white;
+}
+
+/* =========================
+   IPHONE
+========================= */
+
+.iphone {
+
+    background: #f5f5f7;
+
+    min-height: 550px;
+}
+.product-section{
+    align-items: flex-start;
+    color: black;
+}
+
+
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education-section {
+
+    background: #f5f5f7;
+
+    min-height: 520px;
+}
+
+
+
+   /* PRODUCT GRID */
+
+.products {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    padding: 12px;
+
+}
+
+
+.product-card {
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    text-align: center;
+  
+    overflow: hidden;
+    position: relative;
+  
+}
+
+
+.product-card .product-content {
+    max-width: 500px;
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    padding: 30px 20px;
+}
+
+
+.product-card img {
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 650px;
+
+    position: absolute;
+
+    inset: 0;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+/* MacBook Pro, iPad pro*/
+
+.macbook-pro, .ipad-pro {
+    color: white;
+}
+
+
+   /* feature grid section */
+
+
+.feature-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+}
+.feature-card {
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    text-align: center;
+  
+    overflow: hidden;
+    position: relative;
+  
+}
+
+.feature-content{
+ 
+    max-width: 500px;
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+    padding: 30px 20px;
+}
+.feature-image {
+
+   width: 100%;
+    height: 100%;
+
+    max-width: 650px;
+
+    position: absolute;
+
+    inset: 0;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+/* =========================
+   ENTERTAINMENT
+========================= */
+
+.entertainment {
+
+    padding: 50px 0;
+
+    background: #f5f5f7;
+
+    overflow: hidden;
+}
+
+
+.entertainment h2 {
+
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 30px;
+}
+
+
+.entertainment-track {
+
+    display: flex;
+
+    gap: 15px;
+
+    overflow-x: auto;
+
+    padding: 0 20px 20px;
+}
+
+
+.entertainment-card {
+
+    flex: 0 0 280px;
+
+    min-height: 250px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+}
+
+
+.entertainment-card h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+.entertainment-card p {
+
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+}
+
+
+.entertainment-card a {
+
+    color: #0071e3;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+    background: #f5f5f7;
+
+    padding: 30px 20px;
+
+    color: #6e6e73;
+
+    font-size: 12px;
+}
+
+
+.footer-columns {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+
+.footer-columns div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.footer-columns h3 {
+
+    color: #1d1d1f;
+
+    font-size: 13px;
+}
+
+
+.footer-bottom {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    max-width: 1000px;
+
+    margin: 35px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #d2d2d7;
+}
+
+
+.footer-bottom div {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+/* =================================================
+   TABLET + LAPTOP
+   SINGLE MEDIA QUERY
+================================================= */
+
+@media (min-width: 700px) {
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .navbar {
+
+        padding: 0 25px;
+
+    }
+
+
+    .nav-links {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 25px;
+
+        flex: 1;
+
+    }
+
+
+    .nav-links a {
+
+        font-size: 13px;
+
+    }
+
+
+    .menu-button {
+
+        display: none;
+
+    }
+
+
+    /* =========================
+       HERO SECTIONS
+    ========================= */
+
+    .product-section,
+    .event-section,
+    .education-section,
+    .feature-section {
+
+        min-height: 650px;
+
+        padding-top: 70px;
+
+    }
+
+
+    .product-content h2,
+    .section-content h1,
+    .education-content h2,
+    .feature-content h2 {
+
+        font-size: 52px;
+
+    }
+
+
+    .product-content p,
+    .section-content p,
+    .education-content p,
+    .feature-content p {
+
+        font-size: 21px;
+
+    }
+
+    .feature-section {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+
+        padding: 12px;
+
+    }
+    .feature-card {
+
+        min-height: 600px;
+
+    }
+
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+
+        padding: 12px;
+
+    }
+
+
+    .product-card {
+
+        min-height: 600px;
+
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer-columns {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+    }
+
+}

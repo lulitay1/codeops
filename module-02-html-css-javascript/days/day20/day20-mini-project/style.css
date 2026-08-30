@@ -1,0 +1,244 @@
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6f7;
+    color: #222;
+
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    color: #073b3f;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #666;
+}
+
+
+/* =========================================
+   SECTIONS
+   ========================================= */
+
+.search-section,
+.facts-section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+#search-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 11px;
+
+    border: 1px solid #bbb;
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+.search-box input:focus {
+    outline: 2px solid #9dd5d8;
+    border-color: #73bfc3;
+}
+
+.search-box button {
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #073b3f;
+    color: white;
+
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #0a555a;
+}
+
+
+/* =========================================
+   LOADING
+   ========================================= */
+
+.loading {
+    text-align: center;
+    padding: 30px;
+
+    color: #666;
+    font-size: 18px;
+}
+
+
+/* =========================================
+   ERROR
+   ========================================= */
+
+.error {
+    text-align: center;
+    padding: 30px;
+
+    color: #b3261e;
+    background-color: #fff1f0;
+
+    border-radius: 6px;
+}
+
+
+/* =========================================
+   COUNTRY HEADER
+   ========================================= */
+
+.country-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.country-header img {
+    width: 180px;
+    max-width: 100%;
+
+    margin-bottom: 15px;
+
+    border-radius: 5px;
+
+    border: 1px solid #ddd;
+}
+
+.country-header h2 {
+    color: #073b3f;
+}
+
+
+/* =========================================
+   FACTS
+   ========================================= */
+
+.facts-list {
+    list-style: none;
+}
+
+.fact {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.fact:last-child {
+    border-bottom: none;
+}
+
+.fact-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.fact-value {
+    text-align: right;
+}
+
+
+/* =========================================
+   CURRENCIES
+   ========================================= */
+
+.currency-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .fact {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .fact-value {
+        text-align: left;
+    }
+
+    .currency-list {
+        text-align: left;
+    }
+
+}

@@ -60,10 +60,10 @@ class CurrentAccount(Account):
               f"Account type: Current Account\n"
               f"Account number: {self.number}\n"
               f"Balance: {self.balance}")   
-
-
     
 acc1=CurrentAccount("Abebe", 7685,5000)
 acc1.statement()
 acc1.withdraw(400)
+print(acc1.balance)
+acc1.withdraw(5600)
 print(acc1.balance)

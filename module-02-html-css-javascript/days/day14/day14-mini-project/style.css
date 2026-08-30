@@ -1,0 +1,678 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+    --accent: #620367;
+    --accent-light: #f0e6f1;
+
+    --white: #ffffff;
+    --light-bg: #f7f7f7;
+    --border: #e2e6e9;
+
+    --text: #333333;
+    --muted: #7b858d;
+
+    --success: #16834b;
+    --danger: #c0392b;
+    --sale: #f5c542;
+
+    --space-sm: 10px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 30px;
+
+    --font-main: Arial, sans-serif;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: var(--font-main);
+    background: var(--light-bg);
+    color: var(--text);
+}
+
+
+/* =========================
+   PAGE
+   MOBILE BASE
+========================= */
+
+.app {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    grid-area: header;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+
+.navbar {
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 var(--space-md);
+}
+
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+
+.language {
+    display: flex;
+    gap: var(--space-md);
+    color: var(--white);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    grid-area: main;
+
+    width: 100%;
+    padding: var(--space-md);
+
+    min-width: 0;
+}
+
+
+/* =========================
+   MOTO SECTION
+========================= */
+
+.moto-section {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+
+    margin-bottom: var(--space-lg);
+}
+
+
+.logo-img {
+    width: 60px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+.moto-section h1 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+
+.moto-section p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* =================================================
+   MAIN IMAGE
+
+   IMPORTANT:
+   This is a normal image.
+   It is NOT a background.
+
+   The section controls the height.
+================================================= */
+
+.main-image-section {
+    width: 100%;
+
+    height: 30vh;
+    min-height: 150px;
+    max-height: 260px;
+
+    margin-bottom: var(--space-lg);
+
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+
+.main-img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+.main-img img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: var(--space-lg);
+}
+
+
+.card {
+    background: var(--white);
+
+    padding: 14px 10px;
+
+    border-radius: 8px;
+    border: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    min-height: 105px;
+}
+
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 8px;
+}
+
+
+.card-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.card h2 {
+    color: var(--accent);
+
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+
+/* =========================
+   CONTENT GRID
+========================= */
+
+.content-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: var(--space-lg);
+
+    margin-bottom: var(--space-lg);
+}
+
+
+.transactions {
+    background: var(--white);
+
+    padding: var(--space-md);
+
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+
+/* =========================
+   SECTION HEADING
+   FLEXBOX
+========================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-sm);
+
+    margin-bottom: var(--space-md);
+}
+
+
+.section-heading h2 {
+    font-size: 18px;
+}
+
+
+.section-heading a {
+    color: var(--accent);
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TRANSACTION LIST
+   FLEXBOX
+========================= */
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.transaction {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-sm);
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.transaction:last-child {
+    border-bottom: none;
+}
+
+
+.transaction-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-sm);
+
+    min-width: 0;
+}
+
+
+.transaction-info strong {
+    font-size: 14px;
+}
+
+
+.transaction-info small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.transaction-icon {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: var(--accent-light);
+    color: var(--accent);
+
+    font-weight: bold;
+}
+
+
+.amount {
+    font-weight: bold;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+
+.positive {
+    color: var(--success);
+}
+
+
+.negative {
+    color: var(--danger);
+}
+
+
+/* =========================
+   OFFER CARD
+========================= */
+
+.offer-card {
+    position: relative;
+
+    background: var(--accent);
+    color: var(--white);
+
+    padding: var(--space-lg);
+
+    border-radius: 8px;
+
+    margin-bottom: var(--space-lg);
+}
+
+
+.offer-card h2 {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+}
+
+
+.offer-card p {
+    margin-bottom: 20px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.badge {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: var(--sale);
+    color: #17212b;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+.secondary-btn {
+    border: none;
+
+    border-radius: 6px;
+
+    padding: 10px 15px;
+
+    background: var(--white);
+    color: var(--accent);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+   FLEXBOX
+========================= */
+
+.footer {
+    grid-area: footer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 20px var(--space-md);
+
+    background: var(--white);
+
+    border-top: 1px solid #ddd;
+
+    text-align: center;
+}
+
+
+.footer-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+
+.footer a {
+    text-decoration: none;
+
+    color: #394550;
+}
+
+
+.footer a:hover {
+    color: var(--accent);
+}
+
+
+/* =================================================
+   TABLET
+   700px+
+================================================= */
+
+@media (min-width: 700px) {
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .navbar {
+        min-height: 70px;
+
+        padding: 0 var(--space-xl);
+    }
+
+
+    .logo {
+        font-size: 28px;
+    }
+
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .main {
+        padding: var(--space-xl);
+    }
+
+
+    /* =========================
+       MOTO
+    ========================= */
+
+    .moto-section {
+        gap: var(--space-lg);
+        margin-bottom: var(--space-lg);
+    }
+
+
+    .logo-img {
+        width: 80px;
+    }
+
+
+    .moto-section h1 {
+        font-size: 26px;
+    }
+
+
+    /* =========================
+       MAIN IMAGE
+    ========================= */
+
+    .main-image-section {
+        height: 30vh;
+        min-height: 180px;
+        max-height: 240px;
+    }
+
+
+       /* SERVICE CARDS */
+   
+    .cards {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: var(--space-md);
+    }
+
+
+    .card {
+        min-height: 125px;
+    }
+
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .card h2 {
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        padding: 20px var(--space-xl);
+
+        text-align: left;
+    }
+}
+
+
+/* =================================================
+   LAPTOP
+   1024px+
+================================================= */
+
+@media (min-width: 1024px) {
+
+    .main {
+        padding: 30px 40px;
+    }
+
+
+    /* =========================
+       MAIN IMAGE
+    ========================= */
+
+    .main-image-section {
+        height: 30vh;
+
+        min-height: 200px;
+        max-height: 280px;
+    }
+
+
+    /* =========================
+       SERVICE CARDS
+    ========================= */
+
+    .cards {
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
+
+        gap: var(--space-md);
+    }
+
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
