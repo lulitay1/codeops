@@ -1,13 +1,52 @@
-import React from 'react'
+import Header from "./Header";
+import Dish from "./Dish";
 
 function App() {
-  return (
-    <div>
-      <h1>Addis Eats</h1>
-      <p>Explore delicious Ethiopian dishes.</p>
-      
-    </div>
-  )
+
+    const dishes = [
+        {
+            id: 1,
+            name: "Doro Wot",
+            price: 450
+        },
+        {
+            id: 2,
+            name: "Kitfo",
+            price: 500
+        },
+        {
+            id: 3,
+            name: "Tibs",
+            price: 400
+        },
+        {
+            id: 4,
+            name: "Shiro Wot",
+            price: 250
+        }
+    ];
+
+    return (
+        <div>
+
+            <Header />
+
+            <main>
+
+                <h2>Our Menu</h2>
+
+                {dishes.map((dish) => (
+                    <Dish
+                        key={dish.id}
+                        name={dish.name}
+                        price={dish.price}
+                    />
+                ))}
+
+            </main>
+
+        </div>
+    );
 }
 
-export default App
+export default App;
