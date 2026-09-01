@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Dish from "./Dish";
+import './assets/style.css'
 
 function App() {
 
@@ -7,22 +8,26 @@ function App() {
         {
             id: 1,
             name: "Doro Wot",
-            price: 450
+            price: 450,
+            spicy: true
         },
         {
             id: 2,
             name: "Kitfo",
-            price: 500
+            price: 500,
+            spicy: true
         },
         {
             id: 3,
             name: "Tibs",
-            price: 400
+            price: 400,
+            spicy: false
         },
         {
             id: 4,
             name: "Shiro Wot",
-            price: 250
+            price: 250,
+            spicy: true
         }
     ];
 
@@ -41,6 +46,7 @@ function App() {
                         key={dish.id}
                         name={dish.name}
                         price={dish.price}
+                        spicy={dish.spicy}
                     />
                 ))}
             </section>
