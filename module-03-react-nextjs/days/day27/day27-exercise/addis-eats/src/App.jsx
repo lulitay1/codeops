@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Dish from "./Dish";
+import Card from "./Card";
 import './assets/style.css'
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
                 <h2>Our Menu</h2>
             <section className="dish-grid">
 
+                <Card>
+
                 {dishes.map((dish) => (
                     <Dish
                         key={dish.id}
@@ -49,6 +52,8 @@ function App() {
                         spicy={dish.spicy}
                     />
                 ))}
+
+                </Card>
             </section>
 
             </main>
