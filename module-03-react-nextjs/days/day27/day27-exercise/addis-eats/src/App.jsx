@@ -56,27 +56,25 @@ function App() {
 
 
     return (
-        <div>
+    <div>
 
-            <Header />
+        <Header />
 
-            <main>
+        <main>
 
-                <h2>Our Menu</h2>
+            <h2>Our Menu</h2>
             <section className="dish-grid">
+            <h2>{category} Dishes</h2>
 
-                <Card>
-
-                {dishes.map((dish) => (
-                    <Dish
-                        key={dish.id}
-                        name={dish.name}
-                        price={dish.price}
-                        spicy={dish.spicy}
-                    />
-                ))}
-
+            {filteredMenu.map((item) => (
+                <Card key={item.id}>
+                <Dish
+                    name={item.name}
+                    price={item.price}
+                    spicy={item.spicy}
+                />
                 </Card>
+            ))}
             </section>
 
             </main>
