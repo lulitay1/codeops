@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
+  font-family: Arial, sans-serif;
+  background: #f5ece0;
+  color: #173a52;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+main {
+  width: min(900px, 90%);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+
+/* Card */
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(23, 58, 82, 0.12);
+}
+
+/* Dish */
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  
+}
+
+.card span {
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #8b5e3c;
+  color: white;
+  font-size: 1rem; 
+  
+}
+
+/* Empty state */
+
+section > p {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  color: #8b5e3c;
+}
+
+@media (min-width:768)
+{
+    .menu{
+        grid-template-columns: repeat(1fr 1fr );
+    }
+}
+
+@media (min-width:1024){
+    .menu{
+        grid-template-columns: repeat(1fr 1fr 1fr) ;
+    }
+}
