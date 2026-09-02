@@ -1,11 +1,12 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Dish({ name, price, currency = "ETB", spicy = false }) {
+function Dish({ name, price, currency = "ETB", spicy = false, onAdd }) {
   const [count, setCount] = useState(0);
 
   function handleAdd() {
     setCount((currentCount) => currentCount + 1);
+    onAdd(price);
   }
 
   return (
@@ -26,9 +27,7 @@ function Dish({ name, price, currency = "ETB", spicy = false }) {
       <div className="dish-actions">
         <span>Added: {count}</span>
 
-        <button onClick={handleAdd}>
-          Add
-        </button>
+        <button onClick={handleAdd}>Add</button>
       </div>
     </div>
   );
@@ -39,6 +38,7 @@ Dish.propTypes = {
   price: PropTypes.number.isRequired,
   currency: PropTypes.string,
   spicy: PropTypes.bool,
+  onAdd: PropTypes.func.isRequired,
 };
 
 export default Dish;

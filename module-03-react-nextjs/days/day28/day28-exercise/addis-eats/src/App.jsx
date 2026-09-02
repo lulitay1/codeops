@@ -1,86 +1,39 @@
-import Header from "./Header";
-import Dish from "./Dish";
-import Card from "./Card";
-import './assets/style.css'
-
-const dishes = [
-    {
-    id: 1,
-    name: "Doro Wot",
-    price: 450,
-    category: "Main",
-    spicy: true
-    },
-    {
-    id: 2,
-    name: "Kitfo",
-    price: 500,
-    category: "Main",
-    spicy: true
-    },
-    {
-    id: 3,
-    name: "Tibs",
-    price: 400,
-    category: "Main",
-    spicy: false
-    },
-    {
-    id: 4,
-    name: "Shiro Wot",
-    price: 250,
-    category: "Main",
-    spicy: true
-    },
-      {
-    id: 3,
-    name: "Sambusa",
-    price: 80,
-    category: "Starter",
-    spicy: false,
-  },
-    
-];
+import { useState } from "react";
+import Menu from "./Menu";
+import DeliveryForm from "./DeliveryForm";
+import menu from "./data";
+import './index.css'
 
 function App() {
+  const [orderTotal, setOrderTotal] = useState(0);
 
-    const category = "Starter";
-
-    const filteredMenu = dishes.filter(
-        (item) => item.category === category
+  function handleAdd(price) {
+    setOrderTotal(
+      (currentTotal) => currentTotal + price
     );
+  }
 
-    if (filteredMenu.length === 0) {
-        return <p>No dishes found in this category.</p>;
-    }
+  return (
+    <main>
+      <header className="hero">
+        <p className="eyebrow">WELCOME TO</p>
 
+        <h1>Addis Eats</h1>
 
-    return (
-    <div>
+        <p>
+          Authentic Ethiopian food delivered to your door.
+        </p>
+      </header>
 
-        <Header />
+      <Menu
+        dishes={menu}
+        orderTotal={orderTotal}
+        onAdd={handleAdd}
+      />
 
-        <main>
-
-            <h2>Our Menu</h2>
-            <section className="dish-grid">
-            <h2>{category} Dishes</h2>
-
-            {filteredMenu.map((item) => (
-                <Card key={item.id}>
-                <Dish
-                    name={item.name}
-                    price={item.price}
-                    spicy={item.spicy}
-                />
-                </Card>
-            ))}
-            </section>
-
-            </main>
-
-        </div>
-    );
+      <DeliveryForm orderTotal={orderTotal} />
+    </main>
+  );
 }
 
 export default App;
