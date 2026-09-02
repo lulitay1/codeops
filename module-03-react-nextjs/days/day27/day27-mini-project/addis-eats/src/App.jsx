@@ -1,6 +1,7 @@
 import Menu from "./components/Menu";
 import menu from "./data";
 import './assets/css/style.css';
+
 function App() {
   return (
     <main>

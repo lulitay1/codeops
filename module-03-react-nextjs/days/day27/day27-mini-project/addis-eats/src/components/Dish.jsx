@@ -1,6 +1,4 @@
-
 import propTypes from 'prop-types'
-import '../assets/css/style.css'
 
 export default function Dish({ name, price, spicy, currency = "ETB" }) {
     return (
