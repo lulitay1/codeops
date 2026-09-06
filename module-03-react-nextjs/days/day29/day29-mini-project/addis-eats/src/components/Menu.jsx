@@ -1,23 +1,24 @@
 import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
 import CategoryBar from "./CategoryBar";
 import DishList from "./DishList";
-import OrderForm from "./OrderForm";
-import { fetchDishes } from "../api";
 
-function Menu() {
-  const [category, setCategory] = useState("All");
+function Menu({ orderTotal, onAdd }) {
   const [dishes, setDishes] = useState([]);
-  const [orderTotal, setOrderTotal] = useState(0);
-
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const searchRef = useRef(null);
+  const searchInputRef = useRef(null);
 
+  // Focus the search input after the menu has finished loading
   useEffect(() => {
-    searchRef.current?.focus();
-  }, []);
+    if (!loading) {
+      searchInputRef.current?.focus();
+    }
+  }, [loading]);
 
+  // Load dishes whenever the selected category changes
   useEffect(() => {
     const controller = new AbortController();
 
@@ -26,15 +27,22 @@ function Menu() {
       setError(null);
 
       try {
-        const data = await fetchDishes(
-          category,
-          controller.signal
-        );
+        const res = await fetch("/dishes.json", {
+          signal: controller.signal,
+        });
+
+        if (!res.ok) {
+          throw new Error(
+            "Could not load the menu. Please try again."
+          );
+        }
+
+        const data = await res.json();
 
         setDishes(data);
-      } catch (error) {
-        if (error.name !== "AbortError") {
-          setError(error.message);
+      } catch (e) {
+        if (e.name !== "AbortError") {
+          setError(e.message);
         }
       } finally {
         setLoading(false);
@@ -46,36 +54,50 @@ function Menu() {
     return () => {
       controller.abort();
     };
-  }, [category]);
+  }, [selectedCategory]);
 
-  function handleAdd(price) {
-    setOrderTotal(
-      (currentTotal) => currentTotal + price
-    );
-  }
-
-  const categories = [
-    "All",
-    "Main",
-    "Vegan",
-    "Starter",
-    "Grill",
-  ];
-
+  // Loading state
   if (loading) {
     return <p>Loading the menu...</p>;
   }
 
+  // Error state
   if (error) {
-    return <p className="error">{error}</p>;
+    return <p>{error}</p>;
   }
 
+  // Get all available categories
+  const categories = [
+    "All",
+    ...new Set(dishes.map((dish) => dish.category)),
+  ];
+
+  // Filter dishes for display
+  const filteredDishes =
+    selectedCategory === "All"
+      ? dishes
+      : dishes.filter(
+          (dish) => dish.category === selectedCategory
+        );
+
   return (
-    <section>
-      <h2>Our Menu</h2>
+    <section className="menu-section">
+      <div className="menu-header">
+        <div>
+          <h2>Our Menu</h2>
+
+          <p>
+            Choose your favorite dishes.
+          </p>
+        </div>
+
+        <p className="order-total">
+          Order Total: <strong>{orderTotal} ETB</strong>
+        </p>
+      </div>
 
       <input
-        ref={searchRef}
+        ref={searchInputRef}
         type="search"
         placeholder="Search dishes..."
         aria-label="Search dishes"
@@ -83,22 +105,21 @@ function Menu() {
 
       <CategoryBar
         categories={categories}
-        selected={category}
-        onSelect={setCategory}
+        selectedCategory={selectedCategory}
+        onSelect={setSelectedCategory}
       />
 
       <DishList
-        dishes={dishes}
-        onAdd={handleAdd}
+        dishes={filteredDishes}
+        onAdd={onAdd}
       />
-
-      <p className="order-total">
-        Order Total: <strong>{orderTotal} ETB</strong>
-      </p>
-
-      <OrderForm />
     </section>
   );
 }
+
+Menu.propTypes = {
+  orderTotal: PropTypes.number.isRequired,
+  onAdd: PropTypes.func.isRequired,
+};
 
 export default Menu;

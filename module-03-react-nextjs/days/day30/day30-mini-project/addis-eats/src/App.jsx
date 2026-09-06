@@ -1,21 +1,19 @@
-import { CartProvider } from "./CartProvider";
+import Header from "./components/Header";
 import Menu from "./components/Menu";
-import CartBadge from "./CartBadge";
-import CheckoutPanel from "./CheckoutPanel";
+import CheckoutPanel from "./components/CheckoutPanel";
+import OrderForm from "./components/OrderForm";
 
 function App() {
   return (
-    <CartProvider>
-      <header>
-        <h1>Addis Eats</h1>
-        <CartBadge />
-      </header>
+    <main>
+      <Header />
 
-      <main>
-        <Menu />
-        <CheckoutPanel />
-      </main>
-    </CartProvider>
+      <Menu />
+
+      <CheckoutPanel />
+
+      <OrderForm />
+    </main>
   );
 }
 

@@ -1,13 +1,35 @@
+import { useState } from "react";
 import Menu from "./components/Menu";
-import Header from "./components/Header";
-import "./assets/css/style.css";
+import OrderForm from "./components/OrderForm";
+import "./index.css";
 
 function App() {
+  const [orderTotal, setOrderTotal] = useState(0);
+
+  function handleAdd(price) {
+    setOrderTotal(
+      (currentTotal) => currentTotal + price
+    );
+  }
+
   return (
     <main>
-      <Header />
+      <header className="hero">
+        <p className="eyebrow">WELCOME TO</p>
 
-      <Menu />
+        <h1>Addis Eats</h1>
+
+        <p>
+          Authentic Ethiopian food delivered to your door.
+        </p>
+      </header>
+
+      <Menu
+        orderTotal={orderTotal}
+        onAdd={handleAdd}
+      />
+
+      <OrderForm orderTotal={orderTotal} />
     </main>
   );
 }

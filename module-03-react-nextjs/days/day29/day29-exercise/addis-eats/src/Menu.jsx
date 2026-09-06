@@ -1,131 +1,66 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import CategoryBar from "./CategoryBar";
+import DishList from "./DishList";
 
-function Menu() {
-  const [category, setCategory] = useState("All");
-  const [dishes, setDishes] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function Menu({ dishes, orderTotal, onAdd }) {
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const searchRef = useRef(null);
+  const categories = [
+    "All",
+    ...new Set(dishes.map((dish) => dish.category)),
+  ];
 
-  // 7. Focus search input when component mounts
+  const filteredDishes =
+    selectedCategory === "All"
+      ? dishes
+      : dishes.filter(
+          (dish) => dish.category === selectedCategory
+        );
+
   useEffect(() => {
-    searchRef.current.focus();
-  }, []);
-
-  // 2, 3, 4, 5, 6. Fetch dishes
-  useEffect(() => {
-    const controller = new AbortController();
-
-    async function loadDishes() {
-      setLoading(true);
-      setError(null);
-
-      try {
-        const res = await fetch("/dishes.json", {
-          signal: controller.signal,
-        });
-
-        // 4. Check if request was successful
-        if (!res.ok) {
-          throw new Error("Could not load the menu.");
-        }
-
-        const data = await res.json();
-
-        // Filter after fetching
-        const shown =
-          category === "All"
-            ? data
-            : data.filter(
-                (dish) => dish.category === category
-              );
-
-        setDishes(shown);
-      } catch (err) {
-        // Ignore cancellation errors
-        if (err.name !== "AbortError") {
-          setError(err.message);
-        }
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadDishes();
-
-    // 6. Cancel previous request
-    return () => {
-      controller.abort();
-    };
-  }, [category]);
-
-  // 1. Update browser title whenever shown dishes change
-  useEffect(() => {
-    document.title = `${dishes.length} dishes`;
-  }, [dishes]);
-
-  // 3. Loading early return
-  if (loading) {
-    return <p>Loading menu...</p>;
-  }
-
-  // 3 & 4. Error early return
-  if (error) {
-    return <p>{error}</p>;
-  }
+    document.title = `${filteredDishes.length} dishes`;
+  }, [filteredDishes]);
 
   return (
-    <section>
-      <h2>Our Menu</h2>
+    <section className="menu-section">
+      <div className="menu-header">
+        <div>
+          <h2>Our Menu</h2>
+          <p>Choose your favorite dishes.</p>
+        </div>
 
-      {/* 7. Search input */}
-      <input
-        ref={searchRef}
-        type="search"
-        placeholder="Search dishes..."
-      />
-
-      {/* 5. Category */}
-      <div className="category-bar">
-        <button onClick={() => setCategory("All")}>
-          All
-        </button>
-
-        <button onClick={() => setCategory("Main")}>
-          Main
-        </button>
-
-        <button onClick={() => setCategory("Vegan")}>
-          Vegan
-        </button>
-
-        <button onClick={() => setCategory("Starter")}>
-          Starter
-        </button>
-
-        <button onClick={() => setCategory("Grill")}>
-          Grill
-        </button>
+        <p className="order-total">
+          Order Total: <strong>{orderTotal} ETB</strong>
+        </p>
       </div>
 
-      {/* Empty state */}
-      {dishes.length === 0 ? (
-        <p>No dishes in this category yet.</p>
-      ) : (
-        dishes.map((dish) => (
-          <div className="dish" key={dish.id}>
-            <h3>
-              {dish.name}{" "}
-              {dish.spicy && <span>• Spicy</span>}
-            </h3>
+      <CategoryBar
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onSelect={setSelectedCategory}
+      />
 
-            <p>{dish.price} ETB</p>
-          </div>
-        ))
-      )}
+      <DishList
+        dishes={filteredDishes}
+        onAdd={onAdd}
+      />
     </section>
   );
 }
+
+Menu.propTypes = {
+  dishes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      category: PropTypes.string.isRequired,
+      spicy: PropTypes.bool,
+    })
+  ).isRequired,
+  orderTotal: PropTypes.number.isRequired,
+  onAdd: PropTypes.func.isRequired,
+};
 
 export default Menu;

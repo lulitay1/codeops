@@ -1,22 +1,13 @@
-export async function fetchDishes(category, signal) {
-  const url =
-    category === "All"
-      ? "/dishes.json"
-      : `/dishes.json?category=${encodeURIComponent(category)}`;
-
-  const response = await fetch(url, { signal });
+export async function fetchDishes(signal) {
+  const response = await fetch("/dishes.json", {
+    signal,
+  });
 
   if (!response.ok) {
-    throw new Error("Could not load the menu. Please try again.");
+    throw new Error(
+      "Could not load the menu. Please try again."
+    );
   }
 
-  const dishes = await response.json();
-
-  if (category === "All") {
-    return dishes;
-  }
-
-  return dishes.filter(
-    (dish) => dish.category === category
-  );
+  return response.json();
 }

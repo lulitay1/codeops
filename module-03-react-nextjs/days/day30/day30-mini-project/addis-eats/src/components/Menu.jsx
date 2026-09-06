@@ -1,54 +1,101 @@
-import { useState } from "react";
-import useFetch from "../useFetch";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import CategoryBar from "./CategoryBar";
+import DishList from "./DishList";
+import { useFetch } from "../useFetch";
 
 function Menu() {
-  const [category, setCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] =
+    useState("All");
 
-  const url =
-    category === "All"
-      ? "/dishes.json"
-      : `/dishes.json?category=${category}`;
+  const searchInputRef = useRef(null);
 
-  const { data, loading, error } = useFetch(url);
+  const {
+    data: dishes,
+    loading,
+    error,
+  } = useFetch("/dishes.json");
 
-  const dishes =
-    category === "All"
-      ? data
-      : data.filter((dish) => dish.category === category);
+  // Focus the search field after the menu has loaded.
+  useEffect(() => {
+    if (!loading) {
+      searchInputRef.current?.focus();
+    }
+  }, [loading]);
+
+  const categories = [
+    "All",
+    ...new Set(
+      dishes.map((dish) => dish.category)
+    ),
+  ];
+
+  const filteredDishes =
+    selectedCategory === "All"
+      ? dishes
+      : dishes.filter(
+          (dish) =>
+            dish.category === selectedCategory
+        );
+
+  // Stable callback for the memoised CategoryBar/DishList
+  // related rendering path.
+  const handleCategorySelect = useCallback(
+    (category) => {
+      setSelectedCategory(category);
+    },
+    []
+  );
+
+  if (loading) {
+    return (
+      <section className="menu-section">
+        <p>Loading the menu...</p>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="menu-section">
+        <p className="error">{error}</p>
+      </section>
+    );
+  }
 
   return (
-    <div>
-      <h1>Our Menu</h1>
+    <section className="menu-section">
+      <div className="menu-header">
+        <div>
+          <h2>Our Menu</h2>
 
-      <div>
-        <button onClick={() => setCategory("All")}>
-          All
-        </button>
-
-        <button onClick={() => setCategory("Main")}>
-          Main
-        </button>
-
-        <button onClick={() => setCategory("Drink")}>
-          Drink
-        </button>
+          <p>
+            Choose your favorite dishes.
+          </p>
+        </div>
       </div>
 
-      {loading && <p>Loading menu...</p>}
+      <input
+        ref={searchInputRef}
+        type="search"
+        placeholder="Search dishes..."
+        aria-label="Search dishes"
+      />
 
-      {error && <p>Error: {error}</p>}
+      <CategoryBar
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onSelect={handleCategorySelect}
+      />
 
-      {!loading && !error && (
-        <div>
-          {dishes.map((dish) => (
-            <div key={dish.id}>
-              <h3>{dish.name}</h3>
-              <p>{dish.price} ETB</p>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+      <DishList
+        dishes={filteredDishes}
+      />
+    </section>
   );
 }
 

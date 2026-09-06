@@ -16,10 +16,10 @@ function DishList({ dishes, onAdd }) {
       {dishes.map((dish) => (
         <Card key={dish.id}>
           <Dish
+            dish={dish}
             name={dish.name}
             price={dish.price}
             spicy={dish.spicy}
-            onAdd={onAdd}
           />
         </Card>
       ))}

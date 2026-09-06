@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useFetch(url) {
+export function useFetch(url) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +8,7 @@ export default function useFetch(url) {
   useEffect(() => {
     const controller = new AbortController();
 
-    async function loadData() {
+    async function fetchData() {
       setLoading(true);
       setError(null);
 
@@ -18,21 +18,24 @@ export default function useFetch(url) {
         });
 
         if (!response.ok) {
-          throw new Error("Failed to load menu.");
+          throw new Error(
+            "Could not load the menu. Please try again."
+          );
         }
 
         const result = await response.json();
+
         setData(result);
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          setError(err.message);
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          setError(error.message);
         }
       } finally {
         setLoading(false);
       }
     }
 
-    loadData();
+    fetchData();
 
     return () => {
       controller.abort();

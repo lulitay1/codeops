@@ -6,7 +6,7 @@ function DishList({ dishes, onAdd }) {
   if (dishes.length === 0) {
     return (
       <p className="empty-state">
-        No dishes in this category yet.
+        No dishes found in this category.
       </p>
     );
   }
