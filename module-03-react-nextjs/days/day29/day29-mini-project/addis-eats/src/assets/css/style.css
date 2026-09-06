@@ -1,0 +1,77 @@
+.category-bar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.category-bar button {
+  padding: 8px 14px;
+  border: 1px solid #527d9b;
+  border-radius: 20px;
+  background: white;
+  color: #173a52;
+  cursor: pointer;
+}
+
+.category-bar button.active {
+  background: #527d9b;
+  color: white;
+}
+
+.dish-list {
+  display: grid;
+  gap: 12px;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dish button,
+.order-form button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #173a52;
+  color: white;
+  cursor: pointer;
+}
+
+.order-total {
+  margin: 25px 0;
+  font-size: 1.1rem;
+}
+
+.order-form {
+  margin-top: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.error {
+  display: block;
+  margin-top: 5px;
+  color: #b33a3a;
+}
+
+.order-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
