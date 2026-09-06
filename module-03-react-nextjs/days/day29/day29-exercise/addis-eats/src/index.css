@@ -1,0 +1,210 @@
+/* ---------- General ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5ece0;
+  color: #173a52;
+}
+
+main {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  margin: 5px 0;
+  font-size: 2.5rem;
+}
+
+.hero p {
+  margin: 8px 0;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+
+/* ---------- Menu ---------- */
+
+.menu-section,
+.delivery-section {
+  background: white;
+  padding: 24px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-header h2,
+.delivery-section h2 {
+  margin-top: 0;
+}
+
+.menu-header p {
+  margin-bottom: 0;
+}
+
+.order-total {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+
+/* ---------- Category buttons ---------- */
+
+.category-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.category-bar button {
+  border: 1px solid #527d9b;
+  background: white;
+  color: #527d9b;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.category-bar button.active {
+  background: #527d9b;
+  color: white;
+}
+
+
+/* ---------- Dish list ---------- */
+
+.dish-list {
+  display: grid;
+  gap: 12px;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.dish h3 {
+  margin: 0 0 5px;
+}
+
+.dish p {
+  margin: 0;
+}
+
+.spicy-badge {
+  font-size: 0.8rem;
+  color: #8b5e3c;
+}
+
+.dish-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dish-actions button {
+  border: none;
+  background: #173a52;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px;
+}
+
+
+/* ---------- Delivery form ---------- */
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.error {
+  display: block;
+  margin-top: 5px;
+  color: #b33a3a;
+}
+
+.delivery-section button {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 6px;
+  background: #527d9b;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.delivery-section button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  .menu-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dish {
+    align-items: flex-start;
+  }
+
+  .dish-actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}

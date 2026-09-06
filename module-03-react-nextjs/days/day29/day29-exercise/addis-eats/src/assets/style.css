@@ -1,0 +1,23 @@
+h1, h2, p{
+    text-align: center;
+}
+
+
+.dish-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 16px;
+    gap: 10px;
+   
+
+
+}
+
+.dishes{
+    
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
